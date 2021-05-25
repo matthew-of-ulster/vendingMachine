@@ -17,6 +17,33 @@ public class vendingMachine {
 		numOf25 = 0;
 	}
 	
+	public void printAllInfo() {
+		System.out.println("Coins in machine: ");
+		printCoinsInMachine();
+		System.out.println("\nDrinks Available: ");
+		printAll();
+	}
+	
+	public void printCoinsInMachine() {
+		System.out.println(numOf1 + " 1,"+ numOf5 + " 5," + numOf10 + " 10,"+ numOf25 + " 25.");
+	}
+	
+	public void addDrink() {
+		Scanner sc = new Scanner(System.in);
+		String name;
+		int price;
+		int quantity;
+		System.out.println("Enter a name for your product: ");
+		name = sc.nextLine();
+		System.out.println("Enter a price for your product: ");
+		price = sc.nextInt();
+		System.out.println("Enter a quantity for your product: ");
+		quantity = sc.nextInt();
+		product tempProduct = new product(name, price, quantity);
+		productsAvailable.add(tempProduct);
+		System.out.println(name + " added");
+	}
+	
 	public void buyDrink(int choice) {
 		if (choice<productsAvailable.size()) {
 			if (productsAvailable.get(choice).quantity == 0) {

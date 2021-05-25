@@ -14,6 +14,8 @@ public class main {
 			toPrint+= "\n3 - Print change available";
 			toPrint+= "\n4 - Add change";
 			toPrint+= "\n5 - Buy Drink";
+			toPrint+= "\n6 - Add Drink";
+			toPrint+= "\n7 - Print Coins Available";
 			toPrint+="\nx - quit";
 			System.out.println(toPrint);
 			
@@ -44,6 +46,15 @@ public class main {
 				v.buyDrink(choice-1);
 				
 				break;
+				case "6":
+					v.addDrink();
+					break;
+				case "7":
+					v.printCoinsInMachine();
+					break;
+				case "p":
+					v.printAllInfo();
+					break;
 			case "x":
 				System.out.println("Goodbye!");
 				run = false;
